@@ -1,0 +1,195 @@
+.content .cafediv{
+	width:24%;
+	display:inline-block;
+	height:250px;
+	min-width:200px;
+	max-width:290px;
+	border:1px #c7c7c7 solid;
+	margin-bottom:20px;
+	text-align: left;
+	cursor:pointer;
+}
+.cafediv .cafe_title{
+	font-size: 19px;
+	display: inline-block;
+    margin-top: 20px;
+    margin-left: 20px;
+
+}
+.cafediv .cafe_sub{
+	font-size: 15px;
+    color: grey;
+    margin-left: 20px;
+    margin-top: 5px;
+    display: inline-block;
+}
+.cafe01 {
+	background:url("../img/viewall.png") no-repeat;
+	background-position: 90px 52px;
+	background-size: 200px 200px;
+
+}
+.cafe02 {
+	background:url("../img/hollys.png") no-repeat;
+	background-position: 130px 85px;
+	background-size: 200px 200px;
+	    background-color: #bfdfe0;
+}
+.cafe03 {
+	background:url("../img/starbucks.png") no-repeat;
+	background-position: 130px 85px;
+	background-size: 200px 200px;
+}
+.cafe04 {
+	background:url("../img/ediya.png") no-repeat;
+	background-position: 130px 85px;
+	background-size: 200px 200px;
+	background-color: #bfdfe0;
+}
+.cafe05 {
+	background:url("../img/bingsoo.png") no-repeat;
+    background-position: 132px 50px;
+    background-size: 150px 200px;
+
+}
+.cafe06 {
+	background:url("../img/homibing.png") no-repeat;
+    background-position: 121px 139px;
+    background-size: 162px 108px;
+	background-color: #bfdfe0;
+}
+.cafe07 {
+	background:url("../img/mealtop.png") no-repeat;
+    background-position: 143px 128px;
+    background-size: 150px 117px;
+
+}
+.cafe08 {
+    background:url("../img/sealbing.png") no-repeat;
+    background-position: 97px 75px;
+    background-size: 209px 201px;
+	background-color: #bfdfe0;
+}
+.cafe09 {
+    background:url("../img/animal.png") no-repeat;
+    background-position: 89px 77px;
+    background-size: 200px 200px;
+    
+}
+.cafe10 {
+    background:url("../img/dog.png") no-repeat;
+    background-position: 94px 96px;
+    background-size: 196px 160px;
+    background-color: #bfdfe0;
+}
+.cafe11 {
+    background:url("../img/cat.png") no-repeat;
+    background-position: 105px 69px;
+    background-size: 190px 181px;
+    
+}
+.cafe12 {
+    background:url("../img/bird.png") no-repeat;
+    background-position: 101px 73px;
+    background-size: 219px 179px;
+    background-color: #bfdfe0;
+}
+
+.ranking {
+	width:45%;
+	min-width:480px;
+	max-width:587px;
+	height:40px;
+	display:inline-block;
+	margin-top:30px;
+}
+.ranking>div {
+	float:left;
+}
+.ranking .slidename{
+	width:30%;
+	height:100%;
+	background-color: #e2dbdb;
+    line-height: 40px;
+}
+.ranking .ranking_slide{
+	width:70%;
+	height:100%;
+	position: relative;
+}
+.ranking .ranking_slide li{
+	width:100%;
+	height: 40px;
+    line-height: 40px;
+}
+.ranking .ranking_slide li>a>span{
+	height:100%;
+	display:inline-block;
+}
+.cafepoint{
+	float:right !important;
+}
+.ranking .ranking_slide ul{
+	width:100%;
+}
+.ranking_slide .cafename{
+	width:80%;
+	height:100%;
+	background-color:#f9f9f9;
+}
+.ranking_slide .cafepoint{
+	width:20%;
+	height:100%;
+	background-color:#bfdfe0;
+}
+
+.nowreview{
+	width:45%;
+	min-width:480px;
+	max-width:587px;
+	height:40px;
+	display:inline-block;
+	vertical-align: top;
+	margin-top: 30px;
+}
+
+.nowreview>div {
+	float:left;
+}
+.nowreview .slidename{
+	width:30%;
+	height:100%;
+	background-color:#e2dbdb;
+	line-height: 40px;
+}
+.nowreview .reivew_ranking{
+	width:70%;
+	height:100%;
+	position: relative;
+}
+.nowreview .reivew_ranking li{
+	width:100%;
+	height: 40px;
+    line-height: 40px;
+    overflow:hidden;
+}
+.nowreview .reivew_ranking li>span{
+	height:100%;
+	display:inline-block;
+}
+.comment_writer{
+	float:right !important;
+}
+.nowreview .reivew_ranking ul{
+	width:100%;
+}
+.reivew_ranking .comment_content{
+	width:80%;
+	height:100%;
+	background-color:#f9f9f9;
+}
+.reivew_ranking .comment_writer{
+	width:20%;
+	height:100%;
+	background-color:#bfdfe0;
+}
