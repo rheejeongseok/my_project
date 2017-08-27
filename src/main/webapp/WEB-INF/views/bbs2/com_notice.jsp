@@ -77,7 +77,7 @@
                             <tr>
                                 <c:choose>
                                     <c:when test="${not empty user }">
-                                        <td colspan="5"><a href="/bbswrite/free" class="write_btn">ê¸ì°ê¸°</a></td>
+                                        <td colspan="5"><a href="/bbs2/bbswrite/free" class="write_btn">ê¸ì°ê¸°</a></td>
                                     </c:when>
                                     <c:otherwise>
                                     <td colspan="5"><a href="javascript:void(0)" class="write_btn write_not">ê¸ì°ê¸°</a></td>

@@ -14,6 +14,7 @@ public interface IDaoUser {
     int loginajax(String email, String passwd);
     int insertUser(ModelCafeUser user);
     String findpwd(String email, String userphone);
+    String findemail(String usernickname, String userphone);
     int pwdmodify(String passwd, int userno);
     ModelCafeUser selectUser(String email);
     List<ModelCafeUser> selectUserList(ModelCafeUser user);

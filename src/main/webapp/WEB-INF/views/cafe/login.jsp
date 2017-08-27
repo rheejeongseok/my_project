@@ -21,6 +21,10 @@
     		return login(email,passwd);
     		/* window.location.href="/"; */
     	})
+    	
+    	$('#joinBtn').click(function(){
+    		window.location.href="/cafebbs/user/join";
+    	})
     })
     </script>
 </head>
@@ -29,7 +33,7 @@
 		<div class="header"><%@ include file="header.jsp" %></div>
 		<div class="content">
 			<div class="content_wrap">
-				<form action="/cafe/user/login" method="post" enctype="">
+				<form action="/cafebbs/user/login" method="post" enctype="">
 
 						<table class="loginform">
 						<colgroup>
@@ -48,7 +52,7 @@
 						</tr>
 						<tr>
 							<td colspan="2">
-								<div class="find_member"><a href="/user/findpwd">비밀번호 찾기</a></div>
+								<div class="find_member"><a href="/cafebbs/user/findemail">이메일 찾기 /</a> <a href="/cafebbs/user/findpwd">비밀번호 찾기</a></div>
 							</td>
 						</tr>
 						<tr>

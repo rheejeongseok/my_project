@@ -14,7 +14,7 @@
 		<div class="header"><%@ include file="header.jsp" %></div>
 		<div class="content">
 			<div class="content_wrap">
-				<form action="/cafe/user/join" method="post" enctype="">
+				<form action="/cafebbs/user/join" method="post" enctype="">
 					<div class="infotitle">나의 회원 정보 <div class="line"></div></div>
 					<table class="infoform">
 						<colgroup>
@@ -50,7 +50,7 @@
 							</td>
 						</tr>
                         <tr>
-                            <td colspan="2"><a href="/cafe/user/pwdmodify" class="pwdmodify">비밀번호 변경</a></td>
+                            <td colspan="2"><a href="/cafebbs/user/pwdmodify" class="pwdmodify">비밀번호 변경</a> <a href="/cafebbs/user/byebye" style="margin-left:5px" class="byebye">회원탈퇴</a></td>
                         </tr>
 					</table>
 				</form>

@@ -15,7 +15,7 @@
     	
     	$('#submitBtn').click(function(){
     		
-    		var email = $('input[name=passwd]').val();
+    		var email = $('input[name=email]').val();
     		var userphone = $('input[name=userphone]').val();
     		console.log(email+userphone);
     		
@@ -46,7 +46,7 @@
 						</colgroup>
 						<tr>
 							<td>이메일 입력</td>
-							<td><input type="text" name="passwd" placeholder="이메일을 입력해 주세요"></td>
+							<td><input type="text" name="email" placeholder="이메일을 입력해 주세요"></td>
 						</tr>
 						<tr>
 							<td>전화번호 입력</td>

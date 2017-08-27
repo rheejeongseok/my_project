@@ -46,7 +46,7 @@
     </update>
     
     <delete id="deletePhoto" parameterType="int">
-        delete from tb_upload_image
+        delete from TB_Upload_Image
         where articleno = #{articleno} and uploadImageNo = #{uploadImageNo}
     </delete>
 

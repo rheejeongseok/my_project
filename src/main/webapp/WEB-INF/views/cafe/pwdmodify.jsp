@@ -13,25 +13,29 @@
         <script type="text/javascript" src="/resources/cafe/js/ajaxsetup.js"></script>
     <script type="text/javascript" src="/resources/cafe/js/MyAppBoard.js"></script>
     <script>
-    $('#modifyBtn').click(function(){
-        var userpwd = '${user.passwd}';
-        var nowPwd = $('input[name="pwd"]').val();
-        var newPwd = $('input[name="npwd"]').val();
-        var newPwdC   = $('input[name="npwdC"]').val();
-        
-        if(userpwd == nowPwd && newPwd == newPwdC){
-            $('form').submit();
-            return pwdmodify(userpwd,nowPwd,newPwd,newPwdC);
-        }else if(userpwd != nowPwd){
-            alert('입력하신 현재 비밀번호가 다릅니다.')
-            return false;
-        }else if(newPwd != newPwdC){
-            alert('설정한 비밀번호를 한번더 확인 부탁드립니다.')
-            return false;
-        }
-        
-        
+    $(function(){
+    	$('#modifyBtn').click(function(){
+        	console.log("aaa")
+            var userpwd = '${user.passwd}';
+            var nowPwd = $('input[name="pwd"]').val();
+            var newPwd = $('input[name="npwd"]').val();
+            var newPwdC   = $('input[name="npwdC"]').val();
+            
+            if(userpwd == nowPwd && newPwd == newPwdC){
+                return pwdmodify(userpwd,nowPwd,newPwd,newPwdC);
+            }else if(userpwd != nowPwd){
+                alert('입력하신 현재 비밀번호가 다릅니다.')
+                return false;
+            }else if(newPwd != newPwdC){
+                alert('설정한 비밀번호를 한번더 확인 부탁드립니다.')
+                return false;
+            }
+            
+            
+        })
+    	
     })
+    
     </script>
 </head>
 <body>
@@ -39,8 +43,7 @@
 		<div class="header"><%@ include file="header.jsp" %></div>
 		<div class="content">
 			<div class="content_wrap">
-				<form action="" method="post" enctype="">
-					<div class="modifytitle">비밀번호 수정 <div class="line"></div></div>
+				<div class="modifytitle">비밀번호 수정 <div class="line"></div></div>
 					<table class="modifyform">
 						<colgroup>
 							<col style="width:30%;">
@@ -62,7 +65,6 @@
 							<td colspan="2"><input type="button" id="modifyBtn" value="비밀번호수정 완료"></td>
 						</tr>
 					</table>
-				</form>
 			</div>
 		</div>
 		<div class="footer"><%@ include file="footer.jsp" %></div>

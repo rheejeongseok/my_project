@@ -56,6 +56,13 @@
             where usernickname = #{usernickname}
     </select>
     
+    <!-- 이메일 찾기 -->
+    <select id="findemail" parameterType="string" resultType="String">
+            SELECT email
+            FROM tb_cafe_user
+            where usernickname = #{usernickname} and userphone = #{userphone}
+    </select>
+    
     <!-- 비밀번호 찾기 -->
     <select id="findpwd" parameterType="string" resultType="String">
             SELECT passwd

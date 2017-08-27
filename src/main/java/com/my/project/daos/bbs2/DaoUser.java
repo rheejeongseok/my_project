@@ -89,4 +89,20 @@ public class DaoUser implements IDaoUser {
         map.put("password", password);
         return session.selectOne("mapper.mysql.mapperUser.loginajax",map);
     }
+
+	@Override
+	public String findid(String email, String phone) {
+		Map<String,String> map = new HashMap<String,String>();
+        map.put("email", email);
+        map.put("phone", phone);
+		return session.selectOne("mapper.mysql.mapperUser.findid",map);
+	}
+
+	@Override
+	public String findpwd(String userid, String email) {
+		Map<String,String> map = new HashMap<String,String>();
+        map.put("userid", userid);
+        map.put("email", email);
+		return session.selectOne("mapper.mysql.mapperUser.findpwd",map);
+	}
 }

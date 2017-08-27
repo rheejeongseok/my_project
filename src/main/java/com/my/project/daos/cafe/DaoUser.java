@@ -102,4 +102,12 @@ public class DaoUser implements IDaoUser {
         map.put("userno", userno);
         return session.update("mapper.mysql.mapperCafe.pwdmodify",map);
     }
+
+	@Override
+	public String findemail(String usernickname, String userphone) {
+		Map<String, Object> map = new HashMap<String,Object>();
+        map.put("usernickname", usernickname);
+        map.put("userphone", userphone);
+        return session.selectOne("mapper.mysql.mapperCafe.findemail",map);
+	}
 }

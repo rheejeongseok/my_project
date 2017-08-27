@@ -5,12 +5,25 @@
     <meta charset="UTF-8">
     <title>WEB DEVELOPER PORTPOLIO</title>
     <link rel="stylesheet" href="/resources/index/css/index.css" type="text/css" />
-    <script type="text/javascript" src="/resources/index/js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="/resources/index/js/jquery-1.12.1.min.js"></script>
     <script type="text/javascript" src="/resources/index/js/index.js"></script>
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAe6WWuBh01wxj7dGIpGaiCyfTuCj94uwg&callback=initMap">
     </script>
-
+	<script>
+      function initMap() {
+        var uluru = {lat: 37.656278, lng: 127.063280};
+        var map = new google.maps.Map(document.getElementById('my_map'), {
+          zoom: 18,
+          center: uluru,
+          disableDefaultUI: true
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+      }
+    </script>
 </head>
 <body>
     <div class="wrap">
@@ -28,14 +41,14 @@
                 <div class="nav_list">
                     <a href="javascript:void(0)" class="on"><span>Main</span></a>
                     <a href="javascript:void(0)"><span>Environment</span></a>
+                    <a href="javascript:void(0)"><span>Language</span></a>
                     <a href="javascript:void(0)"><span>Portfolio</span></a>
                     <a href="javascript:void(0)"><span>End</span></a>
                 </div>
             </div>
          </div>
         <section>
-            
-			<div class="contents">
+            <div class="contents">
                 <div class="content1 on">
 					<div class="main">
 						<div class="title">
@@ -47,45 +60,134 @@
 						<img src="/resources/index/img/img3.jpg" alt="" class="img3">
 					</div>
 					<div class="mouse">
+						<div class="mouse_text">마우스휠을 굴려주세요!</div>
 						<img src="/resources/index/img/mousewheel.png">
 					</div>
                 </div>
                 <div class="content2">
-                	<div class="content_title">Environment</div>
+                	<div class="content_title">개발환경</div>
 					<div class="main">
-						<div class="main_left">
-							<img src="/resources/index/img/computer.jpg">
-						</div>
-						<div class="main_right">
-							<div class="description">
-								<div class="desc1">
-									<div class="desc_title">작업환경</div>
-									<ul>
-										<li>java 1.*</li>
-										<li>Spring 4.x</li>
-										<li>Tomcat 8.0</li>
-										<li>MySQL 5.x</li>
-										<li>MyBatis</li>
-										<li>Gradle 3.x</li>
-									</ul>
-								</div>
-								<div class="desc2">
-									<div class="desc_title">적용언어</div>
-									<ul>
-										<li>java</li>
-										<li>HTML5</li>
-										<li>CSS</li>
-										<li>JavaScrpit</li>
-										<li>jQuery</li>
-										<li>JSTL</li>
-									</ul>
-								</div>
+						<div class="main_content">
+							<div class="content">
+							<ul>
+								<li>
+									<div class="desc_img">
+										<img src="/resources/index/img/Java_logo.png" alt="" />
+									</div>
+									<div class="desc_text">
+										<div class="desc_title">Java 1.*</div>
+									</div>
+								</li>
+								<li>
+									<div class="desc_img">
+										<img src="/resources/index/img/spring_logo.png" alt="" />
+									</div>
+									<div class="desc_text">
+										<div class="desc_title">Spring 4.x</div>
+									</div>
+								</li>
+								<li>
+									<div class="desc_img">
+										<img src="/resources/index/img/tomcat_logo.png" alt="" />
+									</div>
+									<div class="desc_text">
+										<div class="desc_title">Tomcat 8.0</div>
+									</div>
+								</li>
+							</ul>
+							<ul>
+								<li>
+									<div class="desc_img">
+										<img src="/resources/index/img/mysql_logo.png" alt="" />
+									</div>
+									<div class="desc_text">
+										<div class="desc_title">MySQL 5.x</div>
+									</div>
+								</li>
+								<li>
+									<div class="desc_img">
+										<img src="/resources/index/img/mybatis_logo.png" alt="" />
+									</div>
+									<div class="desc_text">
+										<div class="desc_title">MyBatis</div>
+									</div>
+								</li>
+								<li>
+									<div class="desc_img">
+										<img src="/resources/index/img/gradle_logo.png" alt="" />
+									</div>
+									<div class="desc_text">
+										<div class="desc_title">Gradle 3.x</div>
+									</div>
+								</li>
+							</ul>
 							</div>
 						</div>
 					</div>
                 </div>
+                <div class="content5">
+                	<div class="content_title">사용 프로그래밍 언어</div>
+					<div class="main">
+						<div class="main_content">
+						<div class="content">
+							<ul>
+								<li>
+									<div class="desc_img">
+										<img src="/resources/index/img/Java_logo.png" alt="" />
+									</div>
+									<div class="desc_text">
+										<div class="desc_title">Java</div>
+									</div>
+								</li>
+								<li>
+									<div class="desc_img">
+										<img src="/resources/index/img/HTML5_Logo.png" alt="" />
+									</div>
+									<div class="desc_text">
+										<div class="desc_title">HTML5</div>
+									</div>
+								</li>
+								<li>
+									<div class="desc_img">
+										<img src="/resources/index/img/css_logo.png" alt="" />
+									</div>
+									<div class="desc_text">
+										<div class="desc_title">CSS3</div>
+									</div>
+								</li>
+							</ul>
+							<ul>
+								<li>
+									<div class="desc_img">
+										<img src="/resources/index/img/javascript_logo.png" alt="" />
+									</div>
+									<div class="desc_text">
+										<div class="desc_title">JavaScrpit</div>
+									</div>
+								</li>
+								<li>
+									<div class="desc_img">
+										<img src="/resources/index/img/jquery_logo.png" alt="" />
+									</div>
+									<div class="desc_text">
+										<div class="desc_title">jQuery</div>
+									</div>
+								</li>
+								<li>
+									<div class="desc_img">
+										<img src="/resources/index/img/JSP_logo.png" alt="" />
+									</div>
+									<div class="desc_text">
+										<div class="desc_title">JSP</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+						</div>
+					</div>
+                </div>
                 <div class="content3">
-                	<div class="content_title">Portfolio</div>
+                	<div class="content_title">포트폴리오</div>
 					<div class="main_left_go">
 						<div class="imgbox">
 						<img src="/resources/index/img/bbs1.png" alt="" class="bbs1">
@@ -159,46 +261,36 @@
 									</li>
 								</ul>
 							</div>
-							<a href="/cafe/" class="site_link">사이트 바로가기</a>
+							<a href="/cafebbs/" class="site_link">사이트 바로가기</a>
 						</div>
 						<div class="close"><img src="/resources/index/img/cancel.png"></div>
 					</div>
                 </div>
                 <div class="content4">
-					<div class="content_title">End</div>
+					<div class="content_title">마지막으로</div>
 					<div class="main">
 						<div class="main_left">
 							<img src="/resources/index/img/profile.jpg">
-							<div class="name">Rhee JeongSeok, 28</div>
+							<div class="name">Rhee JeongSeok</div>
 							<div class="sns">
-								@rheejs
+							90.12.07 @rheejs 
+								
 							</div>
 						</div>
 						<div class="main_right">
-							<script>
-						      function initMap() {
-						        var uluru = {lat: 37.656278, lng: 127.063280};
-						        var map = new google.maps.Map(document.getElementById('my_map'), {
-						          zoom: 18,
-						          center: uluru,
-						          disableDefaultUI: true
-						        });
-						        var marker = new google.maps.Marker({
-						          position: uluru,
-						          map: map
-						        });
-						      }
-						    </script>
+							
 							<div id="my_map"></div>
 							<div class="my">
-								<span>tel : 010.3452.4827</span><br><br>
-								<span>email : gamsa1990@hanmail.net</span><br><br>
-								<span>열심히 하는 웹 개발자가 되겠습니다.</span>
+								<span>TEL : 010.3452.4827</span><br><br>
+								<span>EMAIL : gamsa1990@hanmail.net</span><br><br>
+								<span>제 소스는 <a href="https://github.com/rheejeongseok/my_project" target="_blank">여기</a>를 누르면 페이지로 이동합니다. 부족하고 모자라지만 봐주셔서 감사합니다.</span>
 							</div>
 						</div>
 					</div>
                 </div>
-         </section>
+          	</div>
+          </section>
 	</div>
+	<img src="/resources/index/img/loading.gif" class="loading_img" alt="" />
 </body>
 </html>

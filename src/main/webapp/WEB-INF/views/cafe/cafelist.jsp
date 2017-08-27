@@ -79,7 +79,7 @@
                 }
                 
                 var cafeno = $(this).attr("cafeno");
-                window.location.href = "/cafe/cafe1/"+brand+"/"+cafeno;
+                window.location.href = "/cafebbs/cafe1/"+brand+"/"+cafeno;
 			})
 			
 			
@@ -135,35 +135,35 @@
 				<div class="cafe_type">
 					<ul>
 						<li>
-                            <a href="/cafe/coffee">커피</a>
+                            <a href="/cafebbs/cafe/coffee">커피</a>
                             <ul class="cafe_subtype">
-                                <li><a href="/cafe/coffee/starbucks">스타벅스</a></li>
-                                <li><a href="/cafe/coffee/hollys">할리스</a></li>
-                                <li><a href="/cafe/coffee/cafebene">카페베네</a></li>
-                                <li><a href="/cafe/coffee/ediya">이디야</a></li>
-                                <li><a href="/cafe/coffee/tomntom">탐탐</a></li>
-                                <li><a href="/cafe/coffee/coffeebean">커피빈</a></li>
-                                <li><a href="/cafe/coffee/personcafe">개인카페</a></li>
+                                <li><a href="/cafebbs/cafe/coffee/starbucks">스타벅스</a></li>
+                                <li><a href="/cafebbs/cafe/coffee/hollys">할리스</a></li>
+                                <li><a href="/cafebbs/cafe/coffee/cafebene">카페베네</a></li>
+                                <li><a href="/cafebbs/cafe/coffee/ediya">이디야</a></li>
+                                <li><a href="/cafebbs/cafe/coffee/tomntom">탐탐</a></li>
+                                <li><a href="/cafebbs/cafe/coffee/coffeebean">커피빈</a></li>
+                                <li><a href="/cafebbs/cafe/coffee/personcafe">개인카페</a></li>
                             </ul>
                         </li>
 						<li>
-                            <a href="/cafe/bingsoo">빙수</a>
+                            <a href="/cafebbs/cafe/bingsoo">빙수</a>
                             <ul class="cafe_subtype">
-                                <li><a href="/cafe/bingsoo/homibing">호미빙</a></li>
-                                <li><a href="/cafe/bingsoo/sealbing">설빙</a></li>
-                                <li><a href="/cafe/bingsoo/iceflower">눈꽃빙수</a></li>
-                                <li><a href="/cafe/bingsoo/mealtop">밀탑빙수</a></li>
-                                <li><a href="/cafe/bingsoo/oclumong">옥루몽</a></li>
-                                <li><a href="/cafe/bingsoo/personbingsoo">개인빙수</a></li>
+                                <li><a href="/cafebbs/cafe/bingsoo/homibing">호미빙</a></li>
+                                <li><a href="/cafebbs/cafe/bingsoo/sealbing">설빙</a></li>
+                                <li><a href="/cafebbs/cafe/bingsoo/iceflower">눈꽃빙수</a></li>
+                                <li><a href="/cafebbs/cafe/bingsoo/mealtop">밀탑빙수</a></li>
+                                <li><a href="/cafebbs/cafe/bingsoo/oclumong">옥루몽</a></li>
+                                <li><a href="/cafebbs/cafe/bingsoo/personbingsoo">개인빙수</a></li>
                             </ul>
                         </li>
 						<li>
-                            <a href="/cafe/animal">동물카페</a>
+                            <a href="/cafebbs/cafe/animal">동물카페</a>
                             <ul class="cafe_subtype">
-                                <li><a href="/cafe/animal/dog">강아지</a></li>
-                                <li><a href="/cafe/animal/cat">고양이</a></li>
-                                <li><a href="/cafe/animal/bird">새</a></li>
-                                <li><a href="/cafe/animal/etc">기타</a></li>
+                                <li><a href="/cafebbs/cafe/animal/dog">강아지</a></li>
+                                <li><a href="/cafebbs/cafe/animal/cat">고양이</a></li>
+                                <li><a href="/cafebbs/cafe/animal/bird">새</a></li>
+                                <li><a href="/cafebbs/cafe/animal/etc">기타</a></li>
                             </ul>
                         </li>
 					</ul>

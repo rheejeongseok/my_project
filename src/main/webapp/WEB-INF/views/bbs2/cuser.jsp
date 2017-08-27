@@ -27,7 +27,7 @@
                 <div class="loginwrap">
                     <div class="login-form repeatpwd">
                         <span>비밀번호를 한번더 입력해주세요</span>
-                        <form method="post"  action="/cuser" >
+                        <form method="post"  action="/bbs2/cuser" >
                             <input type="password" name="password" placeholder="비밀번호">
                             <input type="submit" name="confirm" value="확인">
                         </form>

@@ -353,6 +353,51 @@ public class HomeController {
         return "bbs2/byebye";
     }
 	
+	@RequestMapping(value = "/findid", method = RequestMethod.GET)
+    public String findid(Locale locale, Model model
+            ,HttpSession session) {
+        logger.info("findid get");
+        
+       
+        return "bbs2/findid";
+    }
 	
+	@RequestMapping(value = "/findid", method = RequestMethod.POST)
+	@ResponseBody
+    public String findidpost(Locale locale, Model model
+            ,@RequestParam(value="email",defaultValue="") String email
+            ,@RequestParam(value="phone",defaultValue="") String phone
+            ,HttpSession session) {
+        logger.info("findid post");
+
+        String result = svruser.findid(email, phone);
+        
+        return result;
+        
+    }
+	
+	@RequestMapping(value = "/findpwd", method = RequestMethod.GET)
+    public String findpwd(Locale locale, Model model
+            ,HttpSession session) {
+        logger.info("findpwd get");
+       
+        
+        return "bbs2/findpwd";
+    }
+	
+	@RequestMapping(value = "/findpwd", method = RequestMethod.POST)
+	@ResponseBody
+    public String findpwdpost(Locale locale, Model model
+            ,@RequestParam(value="email",defaultValue="") String email
+            ,@RequestParam(value="userid",defaultValue="") String userid
+            ,HttpSession session) {
+        logger.info("findpwd post");
+        ModelUser user = (ModelUser)session.getAttribute(Bbs2WebConstants.SESSION_NAME);
+       
+        String result = svruser.findpwd(userid, email);
+        
+        return result;
+        
+    }
 	
 }

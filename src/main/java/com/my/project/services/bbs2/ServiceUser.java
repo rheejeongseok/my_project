@@ -144,4 +144,28 @@ public class ServiceUser implements IServiceUser {
         return result;
     }
 
+	@Override
+	public String findid(String email, String phone) {
+		String result = null;
+		try {
+			result = daouser.findid(email, phone);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return result;
+	}
+
+	@Override
+	public String findpwd(String userid, String email) {
+		String result = null;
+		try {
+			result = daouser.findpwd(userid, email);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return result;
+	}
+
 }

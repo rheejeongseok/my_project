@@ -5,13 +5,13 @@
 <mapper namespace="mapper.mysql.mapperUser">
     
 	<insert id="insertUser" parameterType="ModelUser">
-	    INSERT INTO TB_BBS_USER (userno, username, userid, password, email, postcode,roadAddress,jibunAddress, phone, retireYN)
+	    INSERT INTO TB_Bbs_User (userno, username, userid, password, email, postcode,roadAddress,jibunAddress, phone, retireYN)
 	    VALUES( #{userno}, #{username}, #{userid}, #{password}, #{email} ,#{postcode},#{roadAddress},#{jibunAddress}, #{phone} , 0)
 	</insert>
 
 	<select id="login" parameterType="ModelUser" resultType="ModelUser">
 	        select * 
-	          from tb_bbs_user
+	          from TB_Bbs_User
 	         WHERE  retireYN = 0
 	          AND userid = #{userid}
 	          AND password = #{password}
@@ -19,7 +19,7 @@
 
     <select id="loginajax" parameterType="hashmap" resultType="int">
             select * 
-              from tb_bbs_user
+              from TB_Bbs_User
              WHERE  retireYN = 0
               AND userid = #{userid}
               AND password = #{password}
@@ -30,7 +30,7 @@
 
 
 	<update id="updateUserInfo" parameterType="hashmap">
-	        UPDATE tb_bbs_user
+	        UPDATE TB_Bbs_User
 	           SET email=#{updateValue.email}
 	           ,username=#{updateValue.username}
 	           ,phone=#{updateValue.phone} 
@@ -49,13 +49,13 @@
 	</update>
 
 	<update id="updatePasswd" parameterType="hashmap" >
-	        UPDATE tb_bbs_user 
+	        UPDATE TB_Bbs_User 
 	           SET password = #{newPasswd}            
 	         WHERE password = #{currentPasswd} AND userid = #{userid}
 	</update>
 
 	<update id="deleteUser" parameterType="ModelUser" >
-	        UPDATE TB_BBS_USER 
+	        UPDATE TB_Bbs_User
 	           SET retireYN=1            
 	        WHERE 1 = 1
 	        <if test="userid != null">
@@ -67,13 +67,13 @@
     	<!-- 회원 정보 수정  -->
 	<select id="selectUser" parameterType="int" resultType="ModelUser">
 	         SELECT *
-	         FROM tb_bbs_user
+	         FROM TB_Bbs_User
 	         WHERE userno = #{userno}
 	</select>
 
 	<select id="selectUserList" parameterType="ModelUser" resultType="ModelUser">
 	        SELECT *
-	        FROM tb_bbs_user
+	        FROM TB_Bbs_User
 	        where 1=1
 	            <if test= "userid != null">
 	                AND (userid LIKE '%'||#{userid}||'%')
@@ -97,8 +97,20 @@
 
     <select id="checkuserid" parameterType="string" resultType="int">
             SELECT count(userid)
-            FROM tb_bbs_user
+            FROM TB_Bbs_User
             where userid = #{userid}
+    </select>
+    
+    <select id="findid" parameterType="string" resultType="String">
+            SELECT userid
+            FROM TB_Bbs_User
+            where email = #{email} and phone = #{phone}
+    </select>
+    
+    <select id="findpwd" parameterType="string" resultType="String">
+            SELECT password
+            FROM TB_Bbs_User
+            where userid = #{userid} and email = #{email}
     </select>
 
 </mapper>

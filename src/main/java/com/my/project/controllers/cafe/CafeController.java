@@ -33,7 +33,7 @@ import com.my.project.services.cafe.IServiceCafe;
  * Handles requests for the application home page.
  */
 @Controller
-@RequestMapping("/cafe")
+@RequestMapping("/cafebbs")
 public class CafeController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(CafeController.class);

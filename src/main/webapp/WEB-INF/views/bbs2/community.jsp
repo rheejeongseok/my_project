@@ -80,10 +80,10 @@
                             <tr>
                                 <c:choose>
                                     <c:when test="${not empty user and boardcd == 'free' }">
-                                        <td colspan="5"><a href="/bbswrite/free" class="write_btn">글쓰기</a></td>
+                                        <td colspan="5"><a href="/bbs2/bbswrite/free" class="write_btn">글쓰기</a></td>
                                     </c:when>
                                     <c:when test="${user.userid == 'rhee' and boardcd == 'notice' }">
-                                        <td colspan="5"><a href="/bbswrite/free" class="write_btn">글쓰기</a></td>
+                                        <td colspan="5"><a href="/bbs2/bbswrite/free" class="write_btn">글쓰기</a></td>
                                     </c:when>
                                    <%--  <c:when test="${empty user}">
                                         <td colspan="5"><a href="javascript:void(0)" class="write_btn write_not">글쓰기</a></td>

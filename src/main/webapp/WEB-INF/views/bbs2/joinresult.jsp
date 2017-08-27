@@ -27,7 +27,7 @@
 			<div class="section2 joinresult">
                 <div class="section_wrap">
                     <div class="join_text">가입을 축하드립니다.</div>
-                    <div class="join_link"><a href="/login">여기를 누르면 로그인 화면으로 이동합니다.</a></div>
+                    <div class="join_link"><a href="/bbs2/login">여기를 누르면 로그인 화면으로 이동합니다.</a></div>
                 </div>
             </div>
         </div>

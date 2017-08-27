@@ -332,10 +332,9 @@ div[class^=content_text] textarea{
 .imgfiles{
     display: inline-block;
     position: absolute;
-    left: 0;
+        left: 185px;
 }
 .imgfiles input{
-    margin-left: 16px;
     border: none;
     padding: 5px;
     color: black;

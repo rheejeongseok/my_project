@@ -38,9 +38,11 @@ $(document).ready(function(){
 	})
 	
 	$('.check_id').click(function(){
+		
 		var userid = $('input[name="userid"]').val();
+		
 		$.ajax({
-		    url : '/checkuserid',
+		    url : '/bbs2/checkuserid',
 		    data: {"userid" : userid},        // 사용하는 경우에는 { data1:'test1', data2:'test2' }
 		    type: 'post',       // get, post
 		    timeout: 30000,    // 30초

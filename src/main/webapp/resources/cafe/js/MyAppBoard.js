@@ -9,7 +9,7 @@ var MyApp = {};
 var commentadd = function commentadd(cafeno, content,grade) {
 
     $.ajax({
-        url : '/cafe/commentadd',
+        url : '/cafebbs/commentadd',
         data: { 'cafeno': cafeno, 'content': content,'grade':grade },   // 사용하는 경우에는 { data1:'test1', data2:'test2' }
         type: 'post',       // get, post
         timeout: 30000,     // 30초
@@ -53,7 +53,7 @@ var commentupdate = function commentupdate(commentno,content,cafeno) {
     var textarea = $('div[commentno^="' + commentno + '"]').find('div[class^="content_text"] textarea').val().replace(/\n/g, "<br>");
     
     $.ajax({
-        url : '/cafe/commentupdate',
+        url : '/cafebbs/commentupdate',
         data: { 'commentnoo': commentno, 'content' : content, 'cafeno':cafeno },   // 사용하는 경우에는 { data1:'test1', data2:'test2' }
         type: 'post',       // get, post
         timeout: 30000,     // 30초
@@ -78,7 +78,7 @@ var commentdelete = function commentdelete(commentno) {
     if (chk==true) {
 
         $.ajax({
-            url : '/cafe/commentdelete',
+            url : '/cafebbs/commentdelete',
             data: { 'commentnoo': commentno },   // 사용하는 경우에는 { data1:'test1', data2:'test2' }
             type: 'post',       // get, post
             timeout: 30000,    // 30초
@@ -100,7 +100,7 @@ var commentdelete = function commentdelete(commentno) {
 var morecafelist = function morecafelist(lastcafeno,listlast,brand,cafebigtype) {
     
     $.ajax({
-        url : '/cafe/morecafelist',
+        url : '/cafebbs/morecafelist',
         data: { 'lastcafeno': lastcafeno,'listlast':listlast, 'brand':brand,'cafebigtype':cafebigtype},   // 사용하는 경우에는 { data1:'test1', data2:'test2' }
         type: 'post',       // get, post
         timeout: 30000,     // 30초
@@ -247,7 +247,7 @@ var morecafelist = function morecafelist(lastcafeno,listlast,brand,cafebigtype) 
 var clickLike = function clickLike(userno,cafeno) {
     
     $.ajax({
-        url : '/cafe/clickLike',
+        url : '/cafebbs/clickLike',
         data: { 'userno': userno, 'cafeno' : cafeno},   // 사용하는 경우에는 { data1:'test1', data2:'test2' }
         type: 'post',       // get, post
         timeout: 30000,     // 30초
@@ -256,7 +256,7 @@ var clickLike = function clickLike(userno,cafeno) {
         // 통신이 성공적으로 이루어졌을 때 이 함수를 타게 된다.
         if(data == 1){
         	$('.like_count').children('img').remove();
-        	$('.like_count').append('<img src="/resources/img/like.png" class="ok_bookmark" userno="'+userno+'">')
+        	$('.like_count').append('<img src="/resources/cafe/img/like.png" class="ok_bookmark" userno="'+userno+'">')
         }
     });
     
@@ -266,7 +266,7 @@ var clickLike = function clickLike(userno,cafeno) {
 var deleteLike = function deleteLike(userno,cafeno) {
     
     $.ajax({
-        url : '/cafe/deleteLike',
+        url : '/cafebbs/deleteLike',
         data: { 'userno': userno, 'cafeno' : cafeno},   // 사용하는 경우에는 { data1:'test1', data2:'test2' }
         type: 'post',       // get, post
         timeout: 30000,     // 30초
@@ -275,7 +275,7 @@ var deleteLike = function deleteLike(userno,cafeno) {
         // 통신이 성공적으로 이루어졌을 때 이 함수를 타게 된다.
         if(data == 1){
         	$('.like_count').children('img').remove();
-        	$('.like_count').append('<img src="/resources/img/not_like.png" class="bookmark" userno="'+userno+'">')
+        	$('.like_count').append('<img src="/resources/cafe/img/not_like.png" class="bookmark" userno="'+userno+'">')
         }
     });
     
@@ -285,7 +285,7 @@ var deleteLike = function deleteLike(userno,cafeno) {
 var login = function login(email,passwd) {
     
     $.ajax({
-        url : '/cafe/user/login',
+        url : '/cafebbs/user/login',
         data: { 'email': email, 'passwd' : passwd},   // 사용하는 경우에는 { data1:'test1', data2:'test2' }
         type: 'post',       // get, post
         timeout: 30000,     // 30초
@@ -294,9 +294,30 @@ var login = function login(email,passwd) {
         // 통신이 성공적으로 이루어졌을 때 이 함수를 타게 된다.
         if(data == 1){
         	alert("로그인이 되었습니다.")
-        	window.location.href = "/cafe/";
+        	window.location.href = "/cafebbs/";
         }else if(data != 1){
         	alert("아이디,비밀번호 확인 부탁드립니다.")
+        }
+    });
+    
+    return false;
+}
+
+var findemail = function findemail(usernickname,userphone) {
+    
+    $.ajax({
+        url : '/cafebbs/user/findemail',
+        data: { 'usernickname': usernickname, 'userphone' : userphone},   // 사용하는 경우에는 { data1:'test1', data2:'test2' }
+        type: 'post',       // get, post
+        timeout: 30000,     // 30초
+        dataType: 'text',   // text, html, xml, json, jsonp, script
+    }).done( function(data, textStatus, xhr ){
+        // 통신이 성공적으로 이루어졌을 때 이 함수를 타게 된다.
+        if(data != ""){
+        	alert("귀하의 이메일은"+data)
+        	window.location.href="/cafebbs/user/login";
+        }else if(data == ""){
+        	alert("닉네임, 전화번호를 확인해 주세요")
         }
     });
     
@@ -306,7 +327,7 @@ var login = function login(email,passwd) {
 var findpwd = function findpwd(email,userphone) {
     
     $.ajax({
-        url : '/cafe/user/findpwd',
+        url : '/cafebbs/user/findpwd',
         data: { 'email': email, 'userphone' : userphone},   // 사용하는 경우에는 { data1:'test1', data2:'test2' }
         type: 'post',       // get, post
         timeout: 30000,     // 30초
@@ -314,7 +335,8 @@ var findpwd = function findpwd(email,userphone) {
     }).done( function(data, textStatus, xhr ){
         // 통신이 성공적으로 이루어졌을 때 이 함수를 타게 된다.
         if(data != ""){
-        	alert("귀하의 비밀번호는"+data)
+        	alert("귀하의 비밀번호는"+data);
+        	window.location.href="/cafebbs/user/login";
         }else if(data == ""){
         	alert("이메일, 전화번호를 확인해 주세요")
         }
@@ -326,7 +348,7 @@ var findpwd = function findpwd(email,userphone) {
 var pwdmodify = function pwdmodify(userpwd,nowPwd,newPwd,newPwdC) {
     
     $.ajax({
-        url : '/cafe/user/pwdmodify',
+        url : '/cafebbs/user/pwdmodify',
         data: { 'userpwd': userpwd, 'nowPwd' : nowPwd,'newPwd':newPwd,'newPwdC':newPwdC},   // 사용하는 경우에는 { data1:'test1', data2:'test2' }
         type: 'post',       // get, post
         timeout: 30000,     // 30초
@@ -335,11 +357,38 @@ var pwdmodify = function pwdmodify(userpwd,nowPwd,newPwd,newPwdC) {
         // 통신이 성공적으로 이루어졌을 때 이 함수를 타게 된다.
         if(data == 1){
         	alert("비밀번호가 변경되었습니다.")
-        	window.location.href="/cafe/user/login";
+        	window.location.href="/cafebbs/user/login";
         }else if(data != 1){
         	alert("다시한번 확인 부탁드립니다.")
         }
     });
     
     return false;
+}
+
+
+var byebye = function byebye(passwd,userpasswd) {
+	
+	var chk = confirm("정말로 삭제하시겠습니까?");
+	if(chk == true && passwd == userpasswd){
+		
+	    $.ajax({
+	        url : '/cafebbs/user/byebye',
+	        data: { 'passwd': passwd},   // 사용하는 경우에는 { data1:'test1', data2:'test2' }
+	        type: 'post',       // get, post
+	        timeout: 30000,     // 30초
+	        dataType: 'html',   // text, html, xml, json, jsonp, script
+	    }).done( function(data, textStatus, xhr ){
+	        // 통신이 성공적으로 이루어졌을 때 이 함수를 타게 된다.
+	        if(data == 1){
+	        	alert("나중에 다시한번 들러주세요!");
+	        	window.location.href="/cafe/";
+	        }else if(data != 1){
+	        	alert("비밀번호를 확인해 주세요")
+	        }
+	    });
+	    
+	    return false;
+	}
+
 }

@@ -27,7 +27,7 @@ import com.my.project.services.cafe.IServiceUser;
  * Handles requests for the application home page.
  */
 @Controller
-@RequestMapping("/cafe")
+@RequestMapping("/cafebbs")
 public class CafeUserController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(CafeUserController.class);
@@ -47,7 +47,7 @@ public class CafeUserController {
 		logger.info("login");
 		
 		if(session.getAttribute(CafeWebConstants.SESSION_NAME) != null){
-		    return "redirect:/";
+		    return "redirect:/cafebbs";
 		}
 		
 		return "cafe/login";
@@ -82,7 +82,7 @@ public class CafeUserController {
         
         session.removeAttribute(CafeWebConstants.SESSION_NAME);
         
-        return "redirect:/cafe/";
+        return "redirect:/cafebbs/";
     }
 	
 	@RequestMapping(value = "/user/join", method = RequestMethod.GET)
@@ -130,7 +130,7 @@ public class CafeUserController {
         int result = svruser.insertUser(user);
         
         if(result == 1 ){
-            return "redirect:/cafe/user/joinresult";
+            return "redirect:/cafebbs/user/joinresult";
         }else{
             return "cafe/join";
         }
@@ -182,6 +182,29 @@ public class CafeUserController {
         return "cafe/myinfo";
     }
 	
+	@RequestMapping(value = "/user/findemail", method = RequestMethod.GET)
+    public String findemail(Locale locale, Model model
+            ,HttpSession session) {
+        logger.info("findemail");
+        
+        return "cafe/findemail";
+    }
+    
+    @RequestMapping(value = "/user/findemail", method = RequestMethod.POST)
+    @ResponseBody
+    public String findemailPost(Model model
+            ,@RequestParam(value="usernickname",defaultValue="") String usernickname
+            ,@RequestParam(value="userphone",defaultValue="") String userphone
+            ,HttpSession session) {
+        
+        logger.info("findemail post");
+        
+        String result = svruser.findemail(usernickname, userphone);
+ 
+        return result;
+        
+    }
+	
 	@RequestMapping(value = "/user/findpwd", method = RequestMethod.GET)
     public String findpwd(Locale locale, Model model
             ,HttpSession session) {
@@ -224,9 +247,33 @@ public class CafeUserController {
         ModelCafeUser user = (ModelCafeUser) session.getAttribute(CafeWebConstants.SESSION_NAME);
         
         int result = svruser.pwdmodify(newPwd, user.getUserno());
- 
+        session.removeAttribute(CafeWebConstants.SESSION_NAME);
         return result;
         
     }
     
+    @RequestMapping(value = "/user/byebye", method = RequestMethod.GET)
+    public String byebye(Locale locale, Model model
+            ,HttpSession session) {
+        logger.info("byebye");
+        
+        return "cafe/byebye";
+    }
+    
+    @RequestMapping(value = "/user/byebye", method = RequestMethod.POST)
+    @ResponseBody
+    public int byebyePost(Model model
+            ,HttpSession session) {
+        
+        logger.info("byebye post");
+        
+        ModelCafeUser user = (ModelCafeUser) session.getAttribute(CafeWebConstants.SESSION_NAME);
+        
+        int result = svruser.deleteUser(user.getEmail());
+        
+        session.removeAttribute(CafeWebConstants.SESSION_NAME);
+ 
+        return result;
+        
+    }
 }

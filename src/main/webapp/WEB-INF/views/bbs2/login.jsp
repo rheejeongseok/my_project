@@ -33,7 +33,7 @@
         		        else {
         		        	$('.login_alert').show();
         		        	setTimeout(function(){
-        		        		$('.login_alert').hide();
+        		        		$('.login_alert').hide(1000);
         		        	}, 2000);
         		            
         		        }
@@ -65,8 +65,9 @@
                             <input type="button" name="" value="로그인" class="submitBtn">
                         </form>
                         <ul>
-                            <li><a href="/bbs2/join">회원가입</a></li>
+                            <li><a href="/bbs2/findid">아이디 찾기</a> / <a href="/bbs2/findpwd">비밀번호 찾기</a></li>
                         </ul>
+                        <a href="/bbs2/join" class="go_join">아직 회원이 아니라면? 회원가입</a>
                     </div>
                 </div>
             </div>

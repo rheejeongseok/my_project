@@ -25,7 +25,7 @@
 				<div class="result_wrap">
                     <div class="text">
                     회원가입을 축하드립니다. <br />
-                    <a href="/cafe/user/login">여기를 누르면 로그인창으로 넘어갑니다.</a>
+                    <a href="/cafebbs/user/login">여기를 누르면 로그인창으로 넘어갑니다.</a>
                     </div>
                 </div>
 			</div>

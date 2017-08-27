@@ -28,51 +28,51 @@
 		<div class="header"><%@ include file="header.jsp" %></div>
 		<div class="content">
 			<div class="content_wrap">
-				<div class="cafe01 cafediv" link="/cafe/cafe/coffee">
+				<div class="cafe01 cafediv" link="/cafebbs/cafe/coffee">
 					<span class="cafe_title">커피</span><br>
 					<span class="cafe_sub">Coffee</span>
 				</div>
-				<div class="cafe02 cafediv" link="/cafe/cafe/coffee/hollys">
+				<div class="cafe02 cafediv" link="/cafebbs/cafe/coffee/hollys">
 					<span class="cafe_title">할리스</span><br>
 					<span class="cafe_sub">Hollys</span>
 				</div>
-				<div class="cafe03 cafediv" link="/cafe/cafe/coffee/starbucks">
+				<div class="cafe03 cafediv" link="/cafebbs/cafe/coffee/starbucks">
 					<span class="cafe_title">스타벅스</span><br>
 					<span class="cafe_sub">StarBucks</span>
 				</div>
-				<div class="cafe04 cafediv" link="/cafe/cafe/coffee/ediya">
+				<div class="cafe04 cafediv" link="/cafebbs/cafe/coffee/ediya">
 					<span class="cafe_title">이디야</span><br>
 					<span class="cafe_sub">Ediya</span>
 				</div>
-				<div class="cafe05 cafediv" link="/cafe/cafe/bingsoo">
+				<div class="cafe05 cafediv" link="/cafebbs/cafe/bingsoo">
 					<span class="cafe_title">빙수</span><br>
 					<span class="cafe_sub">BingSoo</span>
 				</div>
-				<div class="cafe06 cafediv" link="/cafe/cafe/bingsoo/homibing">
+				<div class="cafe06 cafediv" link="/cafebbs/cafe/bingsoo/homibing">
 					<span class="cafe_title">호미빙</span><br>
 					<span class="cafe_sub">Homibing</span>
 				</div>
-				<div class="cafe07 cafediv" link="/cafe/cafe/bingsoo/mealtop">
+				<div class="cafe07 cafediv" link="/cafebbs/cafe/bingsoo/mealtop">
 					<span class="cafe_title">밀탑빙수</span><br>
 					<span class="cafe_sub">Mealtop</span>
 				</div>
-                <div class="cafe08 cafediv" link="/cafe/cafe/bingsoo/sealbing">
+                <div class="cafe08 cafediv" link="/cafebbs/cafe/bingsoo/sealbing">
                     <span class="cafe_title">설빙</span><br>
                     <span class="cafe_sub">Sealbing</span>
                 </div>
-				<div class="cafe09 cafediv" link="/cafe/cafe/animal">
+				<div class="cafe09 cafediv" link="/cafebbs/cafe/animal">
 					<span class="cafe_title">동물카페</span><br>
 					<span class="cafe_sub">Animal Cafe</span>
 				</div>
-				<div class="cafe10 cafediv" link="/cafe/cafe/animal/dog">
+				<div class="cafe10 cafediv" link="/cafebbs/cafe/animal/dog">
 					<span class="cafe_title">강아지</span><br>
 					<span class="cafe_sub">Dog</span>
 				</div>
-				<div class="cafe11 cafediv" link="/cafe/cafe/animal/cat">
+				<div class="cafe11 cafediv" link="/cafebbs/cafe/animal/cat">
 					<span class="cafe_title">고양이</span><br>
 					<span class="cafe_sub">Cat</span>
 				</div>
-				<div class="cafe12 cafediv" link="/cafe/cafe/animal/bird">
+				<div class="cafe12 cafediv" link="/cafebbs/cafe/animal/bird">
 					<span class="cafe_title">새</span><br>
 					<span class="cafe_sub">Bird</span>
 				</div>
@@ -82,7 +82,7 @@
 						<div class="slide_list ranking_slide">
 							<ul>
 								<c:forEach var="list" items="${ranking }" varStatus="status">
-                                <li><a href="/cafe/cafe1/${list.brand }/${list.cafeno}"><span class="cafename">${list.cafename }</span></a><span class="cafepoint">${status.index+1 }위</span></li>
+                                <li><a href="/cafebbs/cafe1/${list.brand }/${list.cafeno}"><span class="cafename">${list.cafename }</span></a><span class="cafepoint">${status.index+1 }위</span></li>
 								</c:forEach>
 							</ul>
 						</div>

@@ -100,7 +100,7 @@
                     SELECT 
                         boardcd, boardnm, UseYN
                     FROM 
-                        TB_BBS_Board
+                        TB_Bbs_Board
                     WHERE 1 = 1
                         <if test="boardcd != null and boardcd != ''">
                         AND boardcd = #{boardcd}
@@ -116,7 +116,7 @@
     </select>  
     
     <select id="getBoardTotalRecord" parameterType="hashmap" resultType="int">
-        SELECT count(*) FROM TB_BBS_board 
+        SELECT count(*) FROM TB_Bbs_Board 
          WHERE 1 = 1
                 <if test="boardcd != null and boardcd != ''">
                 AND boardcd = #{boardcd}
@@ -135,7 +135,7 @@
      -->
      
     <insert id="insertBoardList" parameterType="java.util.List">
-        insert into tb_bbs_board( boardcd , boardnm , UseYN  )
+        insert into TB_Bbs_Board( boardcd , boardnm , UseYN  )
         VALUES
             <foreach collection="list" item="item" index="index" open="(" separator="),(" close=")">
                 #{item.boardcd} , #{item.boardnm} , #{item.UseYN}
@@ -143,7 +143,7 @@
     </insert>
     
     <select id="getArticleTotalRecord" parameterType="hashmap" resultType="int">
-        SELECT count(*) FROM TB_BBS_Article 
+        SELECT count(*) FROM TB_Bbs_Article 
          WHERE boardcd = #{boardcd}
             <if test="searchWord != null and searchWord != ''">
             AND (title LIKE '%${searchWord}%' OR content LIKE '%${searchWord}%')
@@ -164,9 +164,9 @@
                            count(distinct(f.uploadImageNo)) uploadImageNo, 
                            count(distinct(c.commentno)) commentNum
                     FROM 
-                        TB_BBS_Article a
-                        LEFT OUTER JOIN tb_upload_image f ON a.articleno = f.articleno
-                        LEFT OUTER JOIN TB_BBS_Comments   c ON a.articleno = c.articleno
+                        TB_Bbs_Article a
+                        LEFT OUTER JOIN TB_Upload_Image f ON a.articleno = f.articleno
+                        LEFT OUTER JOIN TB_Bbs_Comments   c ON a.articleno = c.articleno
                     WHERE
                         a.boardcd = #{boardcd}
                         <if test="searchWord != null">
@@ -182,22 +182,22 @@
     
     <select id="getArticle" parameterType="int" resultType="ModelArticle">
         SELECT *
-        FROM TB_BBS_Article
+        FROM TB_Bbs_Article
         WHERE articleno = #{articleNo}
     </select>
     
     <select id="getMaxArticleno" resultType="int">
-        select max(articleno) from TB_BBS_Article 
+        select max(articleno) from TB_Bbs_Article
     </select>
     
     <insert id="insertArticle" parameterType="ModelArticle" useGeneratedKeys="true" keyProperty="articleno" keyColumn="articleno">
         INSERT INTO 
-        TB_BBS_Article ( boardcd ,userid  , title   , content   , hit, regdate   , InsertUID   , InsertDT   , UpdateUID   , UpdateDT     )
+        TB_Bbs_Article ( boardcd ,userid  , title   , content   , hit, regdate   , InsertUID   , InsertDT   , UpdateUID   , UpdateDT     )
             VALUES     ( #{boardcd},#{userid} , #{title}, #{content}, 0  , now(), #{InsertUID}, #{InsertDT}, #{UpdateUID}, #{UpdateDT}  ) 
     </insert>   
     
     <update id="updateArticle" parameterType="hashmap">
-        UPDATE TB_BBS_Article 
+        UPDATE TB_Bbs_Article 
            SET title     = #{updateValue.title}
              , content   = #{updateValue.content} 
              , UpdateUID = #{updateValue.UpdateUID, jdbcType=VARCHAR}
@@ -218,7 +218,7 @@
     </update>
     
     <delete id="deleteArticle" parameterType="ModelArticle">
-        DELETE FROM TB_BBS_Article 
+        DELETE FROM TB_Bbs_Article 
          WHERE 1 = 1 
           <if test="articleno != null and articleno != ''" >
           AND articleno = #{articleno}
@@ -232,7 +232,7 @@
     </delete>
     
     <update id="increaseHit" parameterType="int">
-        UPDATE TB_BBS_Article 
+        UPDATE TB_Bbs_Article 
            SET hit=hit+1 
          WHERE articleno=#{articleNo}
     </update>
@@ -244,7 +244,7 @@
             SELECT @RNUM := @RNUM + 1 AS r,a.*
             FROM
                 (SELECT articleno, title 
-                   FROM TB_BBS_Article 
+                   FROM TB_Bbs_Article 
                   WHERE boardcd   = #{boardcd} 
                     AND articleno &gt; #{articleNo}
                     <if test="searchWord != null">
@@ -264,7 +264,7 @@
             SELECT @RNUM := @RNUM + 1 AS r,a.*
             FROM
             (SELECT articleno, title 
-               FROM TB_BBS_Article 
+               FROM TB_Bbs_Article 
               WHERE boardcd = #{boardcd} 
                 AND articleno &lt; #{articleNo}
                 <if test="searchWord != null">
@@ -279,32 +279,32 @@
 
     <select id="getCommentNo" parameterType="ModelComments" resultType="int">
         SELECT commentno, userid, memo
-        FROM TB_BBS_Comments 
+        FROM TB_Bbs_Comments 
         WHERE userid = #{userid} and memo = #{memo}
     </select>
     
     
     <select id="getComment" parameterType="int" resultType="ModelComments">
         SELECT commentno,articleno,userid,memo,regdate 
-        FROM TB_BBS_Comments 
+        FROM TB_Bbs_Comments 
         WHERE commentno = #{commentNo}
     </select>
     
     <select id="getCommentList" parameterType="int" resultType="ModelComments">
         SELECT commentno, articleno, userid, memo, regdate
-        FROM TB_BBS_Comments
+        FROM TB_Bbs_Comments
         WHERE articleno = #{articleNo}
         ORDER BY commentno DESC
     </select>
     
     
     <insert id="insertComment" parameterType="ModelComments">
-        INSERT INTO TB_BBS_Comments ( articleno   , userid   , memo   , regdate   , InsertUID   , InsertDT   , UpdateUID   , UpdateDT    )
+        INSERT INTO TB_Bbs_Comments ( articleno   , userid   , memo   , regdate   , InsertUID   , InsertDT   , UpdateUID   , UpdateDT    )
                              VALUES ( #{articleno}, #{userid}, #{memo}, now(), #{InsertUID}, #{InsertDT}, #{UpdateUID}, #{UpdateDT} )
     </insert>
     
     <update id="updateComment" parameterType="hashmap">
-        UPDATE TB_BBS_Comments 
+        UPDATE TB_Bbs_Comments 
            SET memo      = #{updateValue.memo   } 
              , regdate   = now()
          WHERE  1 = 1 
@@ -318,7 +318,7 @@
     </update>
     
     <delete id="deleteComment" parameterType="ModelComments">
-        DELETE FROM TB_BBS_Comments 
+        DELETE FROM TB_Bbs_Comments 
         WHERE 1 = 1 
           <if test="commentno != null and commentno != ''" >
           AND commentno = #{commentno}

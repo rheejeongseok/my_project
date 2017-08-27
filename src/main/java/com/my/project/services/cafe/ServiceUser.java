@@ -178,4 +178,16 @@ public class ServiceUser implements IServiceUser {
         }
         return result;
     }
+
+	@Override
+	public String findemail(String usernickname, String userphone) {
+		String result = null;
+		try {
+			result = daouser.findemail(usernickname, userphone);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return result;
+	}
 }

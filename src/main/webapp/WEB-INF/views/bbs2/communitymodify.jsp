@@ -73,6 +73,7 @@
                         </tr>
                         <tr>
                             <td colspan="2">
+                            <input type="file" name="image"/>
                             <c:if test="${upimg != null or upimg != ''}">
                             <div class="imgfiles">
                                 <c:forEach var="list" items="${upimg }" varStatus="status">

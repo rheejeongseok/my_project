@@ -54,7 +54,7 @@
 						<li>
                             INFO
                             <ul class="sub6">
-                                <li><a href="/info">찾아오시는길</a></li>
+                                <li><a href="/bbs2/info">찾아오시는길</a></li>
                             </ul>
                         </li>
 						<li>
@@ -68,10 +68,9 @@
 				</div>
 				<div class="gnb_line"></div>
 				<div class="site_info">
-					<div class="site_tel">TEL : 010-8669-6700</div>
-					<div class="site_tel">Kakaotalk ID : nbtour114</div>
-					<div class="site_tel">LINE ID : higasiyama</div>
-					<div class="site_bank">신협 010-8669-6700 <br>예금주 : 황미임</div>
+					<div class="site_tel">TEL : 010-3452-4827</div>
+					<div class="site_tel">Kakaotalk ID : gamsa1990</div>
+					<div class="site_bank">신협 010-3452-4827 <br>예금주 : 이정석</div>
 					<a href="" class="rev_btn">RESERVATION</a>
 				</div>
 			</div>

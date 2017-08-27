@@ -225,6 +225,7 @@ public class BoardController {
             ,@PathVariable(value="boardcd") String boardcd
             ,@PathVariable(value="articleno") Integer articleno
             ,HttpServletRequest request
+            ,@ModelAttribute ModelUploadImage vo
             ,@ModelAttribute ModelArticle article
             ) {
 	    logger.info("communitymodifyw post");
@@ -247,6 +248,23 @@ public class BoardController {
         ModelArticle searchValue = new ModelArticle();
         searchValue.setArticleno(articleno);
         
+        Integer uploadno = null;
+        
+        try {
+            vo.setFileName( vo.getImage().getOriginalFilename() );
+            vo.setFileSize( (Long)vo.getImage().getSize() );
+            vo.setArticleno(article.getArticleno());
+            vo.setContentType( vo.getImage().getContentType() ); // 확장자
+            vo.setImageBytes( vo.getImage().getBytes() );
+            vo.setImageBase64( Base64.getEncoder().encodeToString( vo.getImage().getBytes() ) );
+            
+            uploadno = svrupload.insertPhoto(vo);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            // e.printStackTrace();
+            logger.error("bbswriteget" + e.getMessage() );
+            throw e;
+        } 
         
         int result = svrboard.updateArticle(updateValue, searchValue);
         

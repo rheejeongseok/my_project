@@ -2,6 +2,8 @@ package com.my.project.controllers;
 
 
 
+import javax.servlet.http.HttpSession;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +12,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import com.my.project.common.Bbs2WebConstants;
+import com.my.project.common.CafeWebConstants;
 import com.my.project.services.cafe.IServiceCafe;
 
 
@@ -31,11 +36,20 @@ public class PJController {
 	
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String index(Model model) {
+	public String index(Model model,HttpSession session) {
 		logger.info("index");
 		
+		if(session.getAttribute(CafeWebConstants.SESSION_NAME) != null){
+			session.removeAttribute(CafeWebConstants.SESSION_NAME);
+			return "home";
+		}else if(session.getAttribute(Bbs2WebConstants.SESSION_NAME) != null){
+			session.removeAttribute(Bbs2WebConstants.SESSION_NAME);
+			return "home";
+		}
+		else{
+			return "home";
+		}
 		
 		
-		return "home";
 	}	
 }

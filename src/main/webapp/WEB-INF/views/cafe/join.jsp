@@ -69,7 +69,7 @@
 		<div class="header"><%@ include file="header.jsp" %></div>
 		<div class="content">
 			<div class="content_wrap">
-				<form action="/cafe/user/join" method="post" enctype="">
+				<form action="/cafebbs/user/join" method="post" enctype="">
 					<div class="jointitle">카페로 회원가입 <div class="line"></div></div>
 					<table class="joinform">
 						<colgroup>

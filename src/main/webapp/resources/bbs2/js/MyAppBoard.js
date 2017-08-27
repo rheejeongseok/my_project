@@ -87,14 +87,13 @@ var commentadd = function commentadd(articleno, text) {
         // 통신이 성공적으로 이루어졌을 때 이 함수를 타게 된다.    	
     	if(data != null ){
         	
-    			$('.comment_view').prepend('<div class="comment_list'+data.num+' commentno='+data.num+'"></div>');
+    			$('.comment_view').prepend('<div class="comment_list'+data.num+'" commentno="'+data.num+'"></div>');
                 $('.comment_list'+data.num+'').append('<div class="grouping'+data.num+'"></div>');
                 $('.grouping'+data.num+'').append('<div class="comment_writer'+data.num+'">'+data.userid+'</div><div class="comment_date'+data.num+'">'+data.time+'</div><div class="modifyBtns'+data.num+'"></div>');
                 $('.modifyBtns'+data.num+'').append('<div class="comment_modify'+data.num+'"><input type="button" class="comment_modify"value="수정"/></div><div class="comment_delete'+data.num+'"><input type="button" value="삭제"/></div>');
                 $('.comment_list'+data.num+'').append('<div class="comment_content'+data.num+'"></div>');
                 $('.comment_content'+data.num+'').append('<div class="content_text'+data.num+'">'+data.content+'</div>');
                 $('.comment_content textarea').val("");
-                location.reload();
         }
     	
         else {
@@ -136,10 +135,10 @@ var commentdelete = function commentdelete(commentno) {
 
         $.ajax({
             url : '/bbs2/commentdelete',
-            data: { 'commentno': commentno },   // 사용하는 경우에는 { data1:'test1', data2:'test2' }
+            data: { 'commentnoo': commentno },   // 사용하는 경우에는 { data1:'test1', data2:'test2' }
             type: 'post',       // get, post
             timeout: 30000,    // 30초
-            dataType: 'json',  // text, html, xml, json, jsonp, script
+            dataType: 'html',  // text, html, xml, json, jsonp, script
         }).done( function(data, textStatus, xhr ){
             // 통신이 성공적으로 이루어졌을 때 이 함수를 타게 된다.
             if(data > 0){
@@ -152,4 +151,68 @@ var commentdelete = function commentdelete(commentno) {
         
         return false;
     }
+}
+
+var findid = function findid(email,phone) {
+    
+	$.ajax({
+        url : '/bbs2/findid',
+        data: { 'email': email, 'phone' : phone },   // 사용하는 경우에는 { data1:'test1', data2:'test2' }
+        type: 'post',       // get, post
+        timeout: 30000,     // 30초
+        dataType: 'text',   // text, html, xml, json, jsonp, script
+    }).done( function(data, textStatus, xhr ){
+        // 통신이 성공적으로 이루어졌을 때 이 함수를 타게 된다.
+    	if(data != ""){
+    		$('.alert_title').text("아이디 찾기")
+    		$('.alert_text').text("귀하의 아이디는 "+data+"입니다.")
+    		$('.login_alert').show();
+    		setTimeout(function(){
+            window.location.href = "/bbs2/login";
+    		}, 3000);
+        }
+        else {
+        	$('.alert_title').text("아이디 찾기 실패")
+    		$('.alert_text').text("이메일와 전화번호 확인부탁드립니다.")
+        	$('.login_alert').show();
+        	setTimeout(function(){
+        		$('.login_alert').hide();
+        	}, 2000);
+            
+        }
+    });
+    
+    return false;
+}
+
+var findpwd = function findpwd(userid,email) {
+    
+	$.ajax({
+        url : '/bbs2/findpwd',
+        data: { 'userid': userid, 'email' : email },   // 사용하는 경우에는 { data1:'test1', data2:'test2' }
+        type: 'post',       // get, post
+        timeout: 30000,     // 30초
+        dataType: 'text',   // text, html, xml, json, jsonp, script
+    }).done( function(data, textStatus, xhr ){
+        // 통신이 성공적으로 이루어졌을 때 이 함수를 타게 된다.
+    	if(data != ""){
+    		$('.alert_title').text("비밀번호 찾기")
+    		$('.alert_text').text("귀하의 비밀번호는 "+data+"입니다.")
+    		$('.login_alert').show();
+    		setTimeout(function(){
+            window.location.href = "/bbs2/login";
+    		}, 3000);
+        }
+        else {
+        	$('.alert_title').text("비밀번호 찾기 실패")
+    		$('.alert_text').text("아이디와 전화번호 확인부탁드립니다.")
+        	$('.login_alert').show();
+        	setTimeout(function(){
+        		$('.login_alert').hide();
+        	}, 2000);
+            
+        }
+    });
+    
+    return false;
 }

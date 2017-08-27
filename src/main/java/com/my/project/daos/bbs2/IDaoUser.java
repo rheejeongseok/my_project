@@ -16,5 +16,6 @@ public interface IDaoUser {
     List<ModelUser> selectUserList(ModelUser user);
     int checkuserid(String userid);
     int loginajax(String userid, String password);
-    
+    String findid(String email, String phone);
+    String findpwd(String userid, String email);
 }

@@ -140,7 +140,7 @@
        
        $('body').on("click",".not_login",function(){
     	   alert("로그인을 하셔야 합니다.");
-    	   window.location.href="/cafe/user/login";
+    	   window.location.href="/cafebbs/user/login";
        })
        
 		});
@@ -201,25 +201,25 @@
 						<div class="cafe_info">
 							<div class="info_subtitle">업체정보</div>
 							<div class="info_description">
-								<div class="description_sub">영업시간</div> <div class="description_text">${cafe.opentime }</div>
+								<div class="description_sub">영업시간 : </div> <div class="description_text">${cafe.opentime }</div>
 								<br>
-								<div class="description_sub">전화번호</div> <div class="description_text">${cafe.businessnum }</div>
+								<div class="description_sub">전화번호 : </div> <div class="description_text">${cafe.businessnum }</div>
 							</div>
 						</div>
 						<div class="business_info">
 							<div class="info_subtitle">사업자정보</div>
 							<div class="info_description">
-								<div class="description_sub">상호명</div>
+								<div class="description_sub">상호명 : </div>
 								<div class="description_text">${cafe.cafename }</div>
 								<br>
-								<div class="description_sub">카페주소</div>
+								<div class="description_sub">카페주소 : </div>
 								<div class="description_text">${cafe.cafeaddr }</div>
 							</div>
 						</div>
 						<div class="cafe_description">
 							<div class="info_subtitle">업체한마디</div>
 							<div class="info_description">
-								<div class="description_sub">하고싶은말</div>
+								<div class="description_sub">하고싶은말 : </div>
 								<div class="description_text">항상 고객님께 보답하는 업체가 되겠습니다.</div>
 							</div>
 						</div>

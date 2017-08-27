@@ -51,7 +51,7 @@
          })
          
          
-        $("body").on('click','.comment_modify',function(){
+        $("body").on('click','div[class^=comment_modify]',function(){
         	
         	 if($(this).is('.modifyon')){
         		
@@ -80,7 +80,7 @@
        	
         }) 
         
-        $("body").on('click','.comment_delete',function(){
+        $("body").on('click','div[class^=comment_delete]',function(){
        
              var commentno = $(this).parents('div[class^="comment_list"]').attr('commentno');
              return commentdelete(commentno);
@@ -119,7 +119,7 @@
                 <div class="bbs_title">${boardnm }</div>
                 <div class="section2_bbs">
                     <div class="bbs_wrap">
-                    <form action="/bbswrite/{boardcd}" method="post">
+                    <form action="/bbs2/bbswrite/{boardcd}" method="post">
                         <p style="margin: 0; padding: 0;">
                             <input type="hidden" name="boardcd" value="${boardcd }" />
                         </p>
