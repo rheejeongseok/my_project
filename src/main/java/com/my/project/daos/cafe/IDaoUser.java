@@ -22,4 +22,5 @@ public interface IDaoUser {
     int deleteUser(String email);
     int checkemail(String email);
     int checknickname(String usernickname);
+    List<String>getUserLikeCafe(int userno);
 }

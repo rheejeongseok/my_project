@@ -110,4 +110,10 @@ public class DaoUser implements IDaoUser {
         map.put("userphone", userphone);
         return session.selectOne("mapper.mysql.mapperCafe.findemail",map);
 	}
+
+	@Override
+	public List<String> getUserLikeCafe(int userno) {
+		// TODO Auto-generated method stub
+		return session.selectList("mapper.mysql.mapperCafe.getUserLikeCafe",userno);
+	}
 }

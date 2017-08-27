@@ -96,5 +96,18 @@ public class ServiceUpload implements IServiceUpload {
             throw e;
         }
         return result;
-    }    
+    }
+
+
+	@Override
+	public int deletePhotos(int articleno) {
+		int result = 0;
+		try {
+			result = uploaddao.deletePhotos(articleno);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return result;
+	}    
 }

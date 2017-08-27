@@ -64,7 +64,7 @@ var deleteimgfile = function deleteimgfile(articleno,uploadImageNo) {
 	    }).done( function(data, textStatus, xhr ){
 	        // 통신이 성공적으로 이루어졌을 때 이 함수를 타게 된다.
 	        if(data == 1 ){
-	            $('#attachfilelist a[attachfileno="'+attachfileno+'"]').parents().remove();
+	            $('.imgfiles .filename[uploadImageNo="'+uploadImageNo+'"]').remove();
 	        }
 	        else {
 	            alert( '댓글 삭제 실패');

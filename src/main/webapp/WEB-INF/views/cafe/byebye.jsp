@@ -47,7 +47,7 @@
 						</colgroup>
 						<tr>
 							<td>비밀번호 입력</td>
-							<td><input type="text" name="passwd" placeholder="탈퇴를 위해 비밀번호를 한번더 입력해 주세요"></td>
+							<td><input type="password" name="passwd" placeholder="탈퇴를 위해 비밀번호를 한번더 입력해 주세요"></td>
 						</tr>
 						<tr>
 							<td colspan="2"><input type="button" id="submitBtn" value="회원탈퇴"></td>

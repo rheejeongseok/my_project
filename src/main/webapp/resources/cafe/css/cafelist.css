@@ -26,6 +26,7 @@
 .cafe_subtype li{
     display: inline-block;
     height: 20px;
+    margin-left: 10px;
 }
 
 .cafe_subtype li a{
@@ -34,7 +35,8 @@
 
 .cafe_subtype li a:hover{
     text-decoration: underline;
-    color:#656969;
+    color:red;
+    font-weight:bold;
 }
 
 .cafe_type>ul>li{

@@ -48,7 +48,7 @@ $(function(){
 		$('#checkEmail').click(function(){
 		var email = $('input[name="email"]').val();
 			$.ajax({
-			    url : '/cafe/user/checkemail',
+			    url : '/cafebbs/user/checkemail',
 			    data: {"email" : email},        // 사용하는 경우에는 { data1:'test1', data2:'test2' }
 			    type: 'post',       // get, post
 			    timeout: 30000,    // 30초
@@ -71,7 +71,7 @@ $(function(){
 		$('#checkNick').click(function(){
 		var usernickname = $('input[name="usernickname"]').val();
 			$.ajax({
-			    url : '/cafe/user/checknickname',
+			    url : '/cafebbs/user/checknickname',
 			    data: {"usernickname" : usernickname},        // 사용하는 경우에는 { data1:'test1', data2:'test2' }
 			    type: 'post',       // get, post
 			    timeout: 30000,    // 30초

@@ -190,4 +190,17 @@ public class ServiceUser implements IServiceUser {
 		}
 		return result;
 	}
+
+	@Override
+	public List<String> getUserLikeCafe(int userno) {
+		List<String> result = null;
+		try {
+			result = daouser.getUserLikeCafe(userno);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return result;
+	}
 }

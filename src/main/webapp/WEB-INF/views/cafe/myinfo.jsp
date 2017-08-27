@@ -49,6 +49,16 @@
 								${cafeuser.sex }
 							</td>
 						</tr>
+						<tr>
+							<td>자주가는 카페</td>
+							<td>
+								<ul class="like_cafelist">
+								<c:forEach var="list" items="${cafelist }">
+									<li>${list }</li>
+								</c:forEach>
+								</ul>
+							</td>
+						</tr>
                         <tr>
                             <td colspan="2"><a href="/cafebbs/user/pwdmodify" class="pwdmodify">비밀번호 변경</a> <a href="/cafebbs/user/byebye" style="margin-left:5px" class="byebye">회원탈퇴</a></td>
                         </tr>

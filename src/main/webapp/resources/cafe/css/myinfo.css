@@ -54,6 +54,14 @@
 .infoform .description{
 	font-size:12px;
 }
+.like_cafelist li{
+	display:inline-block;
+	padding:5px;
+	background:url('../img/list_icon.png') no-repeat;
+	background-size: 15px 15px;
+    padding-left: 21px;
+    background-position: 2px 6px;
+}
 .footer{
     position: fixed;
     bottom: 0;

@@ -270,6 +270,11 @@
          WHERE cafeno=#{cafeno}
     </update>
     
+<!--     즐찾한 카페찾기 -->
+    <select id="getUserLikeCafe" parameterType="int" resultType="String">        
+        select cafename from tb_cafe_cafeinfo 
+		where cafeno = any(select cafeno from tb_cafe_like where userno = #{userno})
+    </select>
     <!-- 카페 리뷰수 증가 -->
     <update id="increaseReview" parameterType="int">
         UPDATE tb_cafe_cafeinfo 

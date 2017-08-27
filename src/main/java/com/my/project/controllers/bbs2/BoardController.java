@@ -144,7 +144,9 @@ public class BoardController {
                 vo.setImageBytes( vo.getImage().getBytes() );
                 vo.setImageBase64( Base64.getEncoder().encodeToString( vo.getImage().getBytes() ) );
                 
-                uploadno = svrupload.insertPhoto(vo);
+                if(vo.getFileSize() != 0){
+                	uploadno = svrupload.insertPhoto(vo);
+                }
             } catch (Exception e) {
                 // TODO Auto-generated catch block
                 // e.printStackTrace();
@@ -257,8 +259,10 @@ public class BoardController {
             vo.setContentType( vo.getImage().getContentType() ); // 확장자
             vo.setImageBytes( vo.getImage().getBytes() );
             vo.setImageBase64( Base64.getEncoder().encodeToString( vo.getImage().getBytes() ) );
+            if(vo.getFileSize() != 0){
+            	uploadno = svrupload.insertPhoto(vo);
+            }
             
-            uploadno = svrupload.insertPhoto(vo);
         } catch (Exception e) {
             // TODO Auto-generated catch block
             // e.printStackTrace();
@@ -287,6 +291,7 @@ public class BoardController {
         
         ModelArticle  article = svrboard.getArticle(articleno);
         svrboard.deleteArticle(article);
+        svrupload.deletePhotos(articleno);
         
         
         return "redirect:/bbs2/community/{boardcd}?curPage="+curPage;

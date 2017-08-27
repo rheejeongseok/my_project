@@ -13,4 +13,5 @@ public interface IDaoUpload {
     List<ModelUploadImage> getImageByteList(int articleno);
     ModelUploadImage getImageByteOne(int articleno, int uploadImageNo);
     int deletePhoto(int articleno, int uploadImageNo);
+    int deletePhotos(int articleno);
 }

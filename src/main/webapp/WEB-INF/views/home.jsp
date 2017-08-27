@@ -224,7 +224,7 @@
 									</li>
 								</ul>
 							</div>
-							<a href="/bbs2/" class="site_link">사이트 바로가기</a>
+							<a href="/bbs2/" class="site_link" target="_blank">사이트 바로가기</a>
 						</div>
 						<div class="close"><img src="/resources/index/img/cancel.png"></div>
 					</div>
@@ -261,7 +261,7 @@
 									</li>
 								</ul>
 							</div>
-							<a href="/cafebbs/" class="site_link">사이트 바로가기</a>
+							<a href="/cafebbs/" class="site_link" target="_blank">사이트 바로가기</a>
 						</div>
 						<div class="close"><img src="/resources/index/img/cancel.png"></div>
 					</div>

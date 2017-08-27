@@ -1,5 +1,6 @@
 package com.my.project.controllers.cafe;
 
+import java.util.List;
 import java.util.Locale;
 
 import javax.servlet.http.HttpServletRequest;
@@ -11,8 +12,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -35,6 +34,7 @@ public class CafeUserController {
 	@Autowired
 	@Qualifier("servicecafeuser")
 	private IServiceUser svruser;
+
 	
 	/**
 	 * Simply selects the home view to render by returning its name.
@@ -177,7 +177,10 @@ public class CafeUserController {
         
         ModelCafeUser aaa = svruser.selectUser(user.getEmail());
         
+        List<String> cafelist = svruser.getUserLikeCafe(user.getUserno());
+        
         model.addAttribute("cafeuser",aaa);
+        model.addAttribute("cafelist",cafelist);
         
         return "cafe/myinfo";
     }
@@ -263,17 +266,23 @@ public class CafeUserController {
     @RequestMapping(value = "/user/byebye", method = RequestMethod.POST)
     @ResponseBody
     public int byebyePost(Model model
+    		,@RequestParam(value="passwd") String passwd
+    		,@RequestParam(value="userpasswd") String userpasswd
             ,HttpSession session) {
         
         logger.info("byebye post");
         
         ModelCafeUser user = (ModelCafeUser) session.getAttribute(CafeWebConstants.SESSION_NAME);
         
-        int result = svruser.deleteUser(user.getEmail());
+        if(passwd.equals(userpasswd)){
+        	int result = svruser.deleteUser(user.getEmail());
+        	session.removeAttribute(CafeWebConstants.SESSION_NAME);
+        	return result;
+        }else{
+        	int result = -1;
+        	return result;
+        }
         
-        session.removeAttribute(CafeWebConstants.SESSION_NAME);
- 
-        return result;
         
     }
 }

@@ -137,7 +137,7 @@
 						<li>
                             <a href="/cafebbs/cafe/coffee">커피</a>
                             <ul class="cafe_subtype">
-                                <li><a href="/cafebbs/cafe/coffee/starbucks">스타벅스</a></li>
+                                <li style="margin-left: 1%;"><a href="/cafebbs/cafe/coffee/starbucks">스타벅스</a></li>
                                 <li><a href="/cafebbs/cafe/coffee/hollys">할리스</a></li>
                                 <li><a href="/cafebbs/cafe/coffee/cafebene">카페베네</a></li>
                                 <li><a href="/cafebbs/cafe/coffee/ediya">이디야</a></li>
@@ -149,7 +149,7 @@
 						<li>
                             <a href="/cafebbs/cafe/bingsoo">빙수</a>
                             <ul class="cafe_subtype">
-                                <li><a href="/cafebbs/cafe/bingsoo/homibing">호미빙</a></li>
+                                <li style="margin-left: 1%;"><a href="/cafebbs/cafe/bingsoo/homibing">호미빙</a></li>
                                 <li><a href="/cafebbs/cafe/bingsoo/sealbing">설빙</a></li>
                                 <li><a href="/cafebbs/cafe/bingsoo/iceflower">눈꽃빙수</a></li>
                                 <li><a href="/cafebbs/cafe/bingsoo/mealtop">밀탑빙수</a></li>
@@ -160,7 +160,7 @@
 						<li>
                             <a href="/cafebbs/cafe/animal">동물카페</a>
                             <ul class="cafe_subtype">
-                                <li><a href="/cafebbs/cafe/animal/dog">강아지</a></li>
+                                <li style="margin-left: -1%;"><a href="/cafebbs/cafe/animal/dog">강아지</a></li>
                                 <li><a href="/cafebbs/cafe/animal/cat">고양이</a></li>
                                 <li><a href="/cafebbs/cafe/animal/bird">새</a></li>
                                 <li><a href="/cafebbs/cafe/animal/etc">기타</a></li>

@@ -49,5 +49,10 @@
         delete from TB_Upload_Image
         where articleno = #{articleno} and uploadImageNo = #{uploadImageNo}
     </delete>
+    
+    <delete id="deletePhotos" parameterType="int">
+        delete from TB_Upload_Image
+        where articleno = #{articleno}
+    </delete>
 
 </mapper>

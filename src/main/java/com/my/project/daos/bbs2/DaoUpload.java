@@ -64,4 +64,10 @@ public class DaoUpload implements IDaoUpload {
         map.put("uploadImageNo", uploadImageNo);
         return session.delete("mapper.mapperUpload.deletePhoto",map);
     }
+
+	@Override
+	public int deletePhotos(int articleno) {
+		
+		return session.delete("mapper.mapperUpload.deletePhotos",articleno);
+	}
 }
